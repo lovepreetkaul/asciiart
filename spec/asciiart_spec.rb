@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Asciigen do
+RSpec.describe Asciiart do
   it "has a version number" do
-    expect(Asciigen::VERSION).not_to be nil
+    expect(Asciiart::VERSION).not_to be nil
   end
 
   it "does something useful" do

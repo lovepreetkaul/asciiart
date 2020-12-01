@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
-require "asciigen/version"
+require_relative 'asciiart/version'
 require "mini_magick"
 
-module Asciigen
+module Asciiart
   class Image
     attr_reader :height, :width
 
     MAX_BRIGHTNESS = 255
 
-    def initialize(path)
+    def initialize(path, resize_percent=100)
       @image = MiniMagick::Image.open(path)
       @height = @image.height
       @width = @image.width
+      @image.resize resize_percent
+
       self
     end
 
@@ -48,7 +50,7 @@ module Asciigen
       char_s = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$".freeze
       char_arr = char_s.split("")
       index = (brightness * char_arr.length)/MAX_BRIGHTNESS - 1
-      char_arr[index]
+      char_arr[index] * 3
     end
   end
 end
