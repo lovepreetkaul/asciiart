@@ -7,7 +7,7 @@ Generate ASCII art from images.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'asciiart'
+gem 'artascii'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install asciigen
+    $ gem install artascii
 
 ## Usage
 
