@@ -1,8 +1,8 @@
-require_relative "../lib/asciiart"
+require_relative "../lib/artascii"
 require "mini_magick"
 
-path = "/home/lovepreet/Downloads/ascii-pineapple.jpg"
-image_mx = Asciiart::Image.new(path, "500x500")
+path = "/home/lovepreet/Downloads/daisy.jpg"
+image_mx = Artascii::Image.new(path, "80x80")
 puts "Successfully Loaded Image!"
 puts "Image Size: #{image_mx.height} x #{image_mx.width}"
 

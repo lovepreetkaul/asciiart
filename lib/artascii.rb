@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'asciiart/version'
+require_relative 'artascii/version'
 require "mini_magick"
 
-module Asciiart
+module Artascii
   class Image
     attr_reader :height, :width
 
