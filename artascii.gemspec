@@ -9,12 +9,9 @@ Gem::Specification.new do |spec|
   spec.email         = ["Lovepreetkaul23@gmail.com"]
 
   spec.summary       = "Project to generate Ascii art from images."
-  spec.description   = "Project to generate Ascii art from images."
   spec.homepage      = "https://github.com/lovepreetkaul/artascii"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
-
-  spec.metadata["allowed_push_host"] = "http://mygemserver.com"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
