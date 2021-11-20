@@ -4,6 +4,7 @@ require_relative 'artascii/version'
 require 'mini_magick'
 
 module Artascii
+  # The image class implements the artascii functionality
   class Image
     attr_reader :height, :width
 
@@ -14,10 +15,9 @@ module Artascii
       @height = @image.height
       @width = @image.width
       @matrix = @image.resize resize_percent
-      self
     end
 
-    def get_pixels
+    def pixels
       @image.get_pixels
     end
 

@@ -9,7 +9,7 @@ puts 'Successfully Loaded Image!'
 puts "Image Size: #{image_mx.height} x #{image_mx.width}"
 
 puts 'Constructing Matrix of pixels...'
-pixels = image_mx.get_pixels
+pixels = image_mx.pixels
 # puts pixels.to_s
 puts 'successfully constructed pixel matrix!'
 puts "Pixel Matrix Size: #{pixels.length} x #{pixels[0].length}"
