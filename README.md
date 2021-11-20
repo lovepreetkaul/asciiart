@@ -20,6 +20,31 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
+require "artascii"
+
+Specify the path to your image
+path = "daisy.jpg"
+
+# Initialize the image matrix
+image_mx = Artascii::Image.new(path)
+
+# Can print image dimensions
+puts "Image Size: #{image_mx.height} x #{image_mx.width}"
+
+# Construct Pixel Matrix
+pixels = image_mx.get_pixels
+
+# Construct Brightness Matrix
+# Currently uses Average calculation method
+bright_pixels = image_mx.get_brightness_mx(pixels)
+
+# Finalize the ascii image by mapping brightness to ascii chars
+mx = image_mx.get_ascii_mx(bright_pixels)
+
+# Print the matrix to a file of your choosing to view
+image_mx.print_to_file(mx, "matrix.txt")
+```
 
 ## Development
 
