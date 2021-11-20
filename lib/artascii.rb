@@ -13,8 +13,7 @@ module Artascii
       @image = MiniMagick::Image.open(path)
       @height = @image.height
       @width = @image.width
-      @image.resize resize_percent
-
+      @matrix = @image.resize resize_percent
       self
     end
 
@@ -39,11 +38,24 @@ module Artascii
         line.each { |pixel| line_mx.append(to_char(pixel)) }
         ascii_mx.append(line_mx)
       end
-      print_mx(ascii_mx)
+      # print_mx(ascii_mx)
+      ascii_mx
     end
 
-    def print_mx(matrix)
-      matrix.each { |line| puts line.join()  }
+    def modify_ascii_mx
+      ascii_mx = Array.new
+      @matrix.each do |line|
+        line_mx = Array.new
+        line.each { |pixel| yield }
+        ascii_mx.append(line_mx)
+      end
+      ascii_mx
+    end
+
+    def print_to_file(matrix, path=nil)
+      File.open(path, "w") do |f|
+        matrix.each { |line| f.puts line.join() + '\n'}  
+      end 
     end
 
     def to_char(brightness)
